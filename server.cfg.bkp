@@ -1,0 +1,152 @@
+set es_enableCustomData 1 
+set mysql_connection_string "server=localhost;database=essentialmode;userid=root;password="
+
+endpoint_add_tcp "0.0.0.0:30120"
+endpoint_add_udp "0.0.0.0:30120" 
+sv_maxclients 48
+
+
+sv_licenseKey "cfxk_1Dm16Q3xKolfkczq4wkn8_264Opc"
+
+
+
+
+# Ace!
+add_ace resource.essentialmode command.sets allow
+add_ace resource.essentialmode command.add_principal allow
+add_ace group.superadmin jobcreator allow
+add_principal identifier.license:ad6b7e0fae1b2786c2b356b995f3c41ad7ad421e group.superadmin
+add_ace resource.essentialmode command.add_ace allow
+add_ace group.admin command allow
+add_ace group.admin command.quit deny
+add_ace group.admin tigoanticheat.bypass allow
+add_ace group.moderator easyadmin.player.spectate allow
+add_ace group.moderator easyadmin.player.teleport allow
+add_ace group.moderator easyadmin.player.slap allow
+add_ace group.moderator easyadmin.player.freeze allow
+
+# Vanilla
+start mapmanager
+start chat
+start spawnmanager
+start sessionmanager
+start fivem
+start hardcap
+start rconlog
+start okokChat
+#start scoreboard
+#start playernames
+#inserted trough ZAP ressourcesystem
+
+# Essentialmode
+start av_houserobbery
+start essentialmode
+start burglary
+start esx_burglary
+start esx_outlawalert
+start radiiooo
+start Notification
+start Alpha_AK
+start sajdi
+start t0sic_loadingbar
+start threatbar
+start houseRobberies
+start es_ui
+start es_admin2
+start mysql-async
+start esplugin_mysql
+start es_extended
+start esx_society
+start antilag
+ensure [robbery]
+ensure [Mechanic]
+ensure [scripts]
+ensure [esx]
+ensure [Addon]
+ensure [mlo]
+ensure [MumbleVoip]
+ensure [weaponStore]
+ensure [cars] 
+ensure [clothes]
+ensure [cardealervehicles]
+ensure [car]
+ensure EasyAdmin
+# Utility
+start sesx_assets
+start bob74_ipl
+start loadipl
+start loading-screen
+start ban
+start phone
+start Reactive-Loading-Screen
+
+#Discord
+#start discord_perms
+#start DiscordWhitelist
+#start DiscordVehicleWhitelist
+#start Discord-Rich-presence
+#start drp_gc1
+#start RageUI
+
+# Ambulance
+start esx_ambulancejob
+
+# TokoVoip
+start gcphone
+#start tokovoip_script
+#start ls-radio
+
+#start esx_kashacters
+# Set this to 0 to disallow scripthook. Set it to 1 to make it easier to hack your server.
+sv_scriptHookAllowed 0
+
+# Uncomment this to enable RCON. Make sure to change the password.  You likely don't need this.
+#rcon_password 919ccbc495
+
+# A comma-separated list of tags for your server.
+# For example:
+# Or:
+
+# Set an optional server info and connecting banner image url.
+# Size doesn't matter, any banner sized image will be fine.
+#sets banner_detail "https://share.creavite.co/xQEBsYIXVen6dsNG.gif"
+sets banner_connecting "https://share.creavite.co/xQEBsYIXVen6dsNG.gif"
+
+# Set your server's hostname
+sv_hostname "[^4ESX^0] ^6The God ^6Roleplay ^6S1^0I ^0I^5💎Сероизен ^5RolePlay ^5💎^0I ^0I^2💲50000 ^2НАЧАЛЕН ^2БОНУС💲^0I ^0I^3👖КЪСТЪМ ДРЕХИ👖^0I ^0I^4🏎️200 КЪСТЪМ ^4КОЛИ🏎️^0I ^0I^8🎉РАЗДАВАНИЯ🎉^0I ^0I🖤MAFIA🖤^0I ^0I^8💀NARCOS💀^0I ^0I"
+sets sv_projectName "^6The God ^6Roleplay ^6S1"
+sv_projectDesc "Тук буквално има Всичко"
+
+# Load a server icon (96x96 PNG file)
+load_server_icon The God RP
+
+# Uncomment this line if you do not want your server to be listed in the server browser.
+#sv_master1 ""
+
+# Want to only allow players authenticated with a third-party provider like Steam?
+# Don't forget Social Club is a third party provider too!
+#sv_authMaxVariance 1
+#sv_authMinTrust 5
+
+# Hide player endpoints in external log output.
+sv_endpointprivacy true
+
+# Server player slot limit
+
+add_ace group.admin webadmin allow
+add_principal identifier.steam:11000013fa7b5fe group.admin
+sets tags "The God RP S1,esx,economy,bulgaria,bulgarian,bg,reallife,rp"
+sets discord "https://discord.gg/rkaCzUa3" 
+#This is an official FiveM server hosted by ZAP-Hosting.com. You do not need to put a license key here.
+restart sessionmanager
+set steam_webApiKey "38435410B4F548D49AFA87935514D29D"
+#set sv_UseDirectListing false
+sets locale "bg-BG"
+#set sv_listingIPOverride "45.146.254.217"
+exec easyadmin_permissions.cfg
+
+add_ace group.admin jobcreator allow # Add permission to group
+
+# Can also be identifier.steam:11000013f3d90df
+
+add_principal identifier.license:438e8f29e44acfd1810edf4a77595fbf0af31757 group.admin # Add player to the group

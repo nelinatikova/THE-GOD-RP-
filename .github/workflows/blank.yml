@@ -1,0 +1,29 @@
+sudo apt update
+sudo apt upgrade -y
+sudo apt install git -y
+sudo apt-get install screen -y
+sudo apt-get install -y build-essential
+sudo apt-get install -y gcc g++ make
+# Създайте директория за FiveM сървъра
+mkdir -p ~/fivem/txData
+cd ~/fivem
+
+# Изтеглете FiveM сървъра
+curl -O https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/latest.tar.gz
+tar -xzf latest.tar.gz
+rm latest.tar.gz
+
+# Изтеглете конфигурационни файлове
+cd ~/fivem/txData
+git clone https://github.com/citizenfx/cfx-server-data.git server-data
+cd server-data
+nano ~/fivem/txData/server-data/server.cfg
+endpoint_add_tcp "0.0.0.0:30120"
+endpoint_add_udp "0.0.0.0:30120"
+set sv_licenseKey "YOUR_LICENSE_KEY"
+set sv_hostname "My Free FXServer"
+set onesync_enabled 1
+set sv_maxclients 32
+cd ~/fivem
+screen -S fivem
+bash ~/fivem/run.sh +exec ~/fivem/txData/server-data/server.cfg
